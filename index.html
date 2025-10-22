@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideal Movement Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="movement-finder">
+        <h2>Find Your Ideal Movement</h2>
+        <p>Discover the perfect physical activities for your body, personality, and lifestyle that you'll actually enjoy and stick with long-term.</p>
+        
+        <form id="movementForm">
+            <!-- Joint Issues -->
+            <div class="form-group">
+                <h3>Joint Considerations</h3>
+                <label for="jointIssues">Do you have any joint concerns or limitations?</label>
+                <div class="select-wrapper">
+                    <select id="jointIssues" required>
+                        <option value="">Please select...</option>
+                        <option value="none">No significant joint issues</option>
+                        <option value="mild">Mild joint discomfort occasionally</option>
+                        <option value="moderate">Moderate joint issues that limit high-impact</option>
+                        <option value="significant">Significant joint limitations</option>
+                    </select>
+                </div>
+                <div class="error-message" id="jointError">Please select an option</div>
+            </div>
+
+            <!-- Fitness Level -->
+            <div class="form-group">
+                <h3>Current Activity Level</h3>
+                <label for="fitnessLevel">How would you describe your current fitness level?</label>
+                <div class="select-wrapper">
+                    <select id="fitnessLevel" required>
+                        <option value="">Please select...</option>
+                        <option value="beginner">Beginner (new to regular exercise)</option>
+                        <option value="intermediate">Intermediate (active 1-3 times weekly)</option>
+                        <option value="advanced">Advanced (active 4+ times weekly)</option>
+                    </select>
+                </div>
+                <div class="error-message" id="fitnessError">Please select an option</div>
+            </div>
+
+            <!-- Social Preference -->
+            <div class="form-group">
+                <h3>Social Style</h3>
+                <label>Do you prefer exercising alone or with others?</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="social" value="solo" required>
+                        <span>Alone (I enjoy solitude and self-paced activities)</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="social" value="group">
+                        <span>With others (I'm motivated by social interaction)</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="social" value="both">
+                        <span>Mix of both (Flexible depending on mood)</span>
+                    </label>
+                </div>
+                <div class="error-message" id="socialError">Please select an option</div>
+            </div>
+
+            <!-- Environment Preference -->
+            <div class="form-group">
+                <h3>Environment Preference</h3>
+                <label>Where do you prefer to be active?</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="environment" value="indoor" required>
+                        <span>Indoors (gym, home, studio)</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="environment" value="outdoor">
+                        <span>Outdoors (parks, trails, nature)</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="environment" value="both">
+                        <span>Both indoor and outdoor options</span>
+                    </label>
+                </div>
+                <div class="error-message" id="environmentError">Please select an option</div>
+            </div>
+
+            <!-- Enjoyment Factors -->
+            <div class="form-group">
+                <h3>What Sounds Most Enjoyable?</h3>
+                <label>Select activities that appeal to you:</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="enjoyment" value="mindfulness">
+                        <span>Mindful, meditative movement</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="enjoyment" value="competitive">
+                        <span>Competitive or goal-oriented activities</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="enjoyment" value="creative">
+                        <span>Creative expression through movement</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="enjoyment" value="practical">
+                        <span>Practical, functional movement</span>
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn" id="submitBtn">Find My Ideal Activities</button>
+        </form>
+
+        <!-- Results Section -->
+        <div class="results" id="results">
+            <h3>Your Personalized Movement Recommendations</h3>
+            <p>Based on your preferences, here are 3 activities perfectly suited for you:</p>
+            <div id="activityResults"></div>
+            <h3>Getting Started Tips</h3>
+            <p id="gettingStarted"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
